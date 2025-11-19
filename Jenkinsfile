@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-        // EXACTEMENT le nom défini dans Global Tool Configuration
-        maven 'Maven_3_9'
+    environment {
+        M2_HOME = '/usr/share/maven'
+        PATH = "${M2_HOME}/bin:${env.PATH}"
     }
 
     stages {
